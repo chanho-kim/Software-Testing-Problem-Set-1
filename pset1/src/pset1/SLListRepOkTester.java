@@ -18,7 +18,21 @@ package pset1;
 		}
 		
 		@Test public void t2() {
-			
+			SLList l = new SLList();
+			Node n1 = new Node();
+			Node n2 = new Node();
+			l.header = n1;
+			n1.next = n2;
+			assertTrue(l.repOk());
 		}
-		
+
+		@Test public void t3() {
+			SLList l = new SLList();
+			Node n1 = new Node();
+			Node n2 = new Node();
+			l.header = n1;
+			n1.next = n2;
+			n2.next = n1;
+			assertFalse(l.repOk());
+		}
 	}
